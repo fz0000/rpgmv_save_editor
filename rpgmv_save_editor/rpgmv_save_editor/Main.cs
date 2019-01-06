@@ -62,8 +62,9 @@ namespace rpgmv_save_editor
             {
                 if (saveFileDialog1.ShowDialog() != DialogResult.OK)
                 {
-                    strSaveFile = saveFileDialog1.FileName;
+                    return;
                 }
+                strSaveFile = saveFileDialog1.FileName;
             }
             else
             {

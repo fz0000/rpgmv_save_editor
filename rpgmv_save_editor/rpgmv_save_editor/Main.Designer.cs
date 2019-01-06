@@ -132,8 +132,12 @@
             // openFileDialog1
             // 
             this.openFileDialog1.DefaultExt = "rpgsave";
-            this.openFileDialog1.FileName = "openFileDialog1";
             this.openFileDialog1.Filter = "RPGMV存档文件|*.rpgsave";
+            // 
+            // saveFileDialog1
+            // 
+            this.saveFileDialog1.DefaultExt = "rpgsave";
+            this.saveFileDialog1.Filter = "RPGMV存档文件|*.rpgsave";
             // 
             // Main
             // 
