@@ -23,7 +23,6 @@ namespace rpgmv_save_editor
 
         private void textBoxSaveFileContent_DragDrop(object sender, DragEventArgs e)
         {
-            string strFile = "";
             if (e.Data.GetDataPresent(DataFormats.FileDrop))
             {
                 string[] content = (string[])e.Data.GetData(DataFormats.FileDrop);
@@ -32,9 +31,9 @@ namespace rpgmv_save_editor
                     MessageBox.Show("只能拖入一个文件");
                     return;
                 }
-                strFile = content[0];
+                strSaveFile = content[0];
             }
-            LoadSaveFile(strFile);
+            LoadSaveFile(strSaveFile);
         }
 
         private void LoadSaveFile(string strFile)
@@ -42,6 +41,7 @@ namespace rpgmv_save_editor
             StreamReader sr = new StreamReader(strFile);
             string textFile = LZString.DecompressFromBase64(sr.ReadToEnd());
             textBoxSaveFileContent.Text = textFile;
+            sr.Close();
         }
 
         private void textBoxSaveFileContent_DragEnter(object sender, DragEventArgs e)
@@ -54,6 +54,24 @@ namespace rpgmv_save_editor
             {
                 e.Effect = DragDropEffects.None;
             }
+        }
+
+        private void 保存SToolStripButton_Click(object sender, EventArgs e)
+        {
+            if (strSaveFile == "")
+            {
+                if (saveFileDialog1.ShowDialog() != DialogResult.OK)
+                {
+                    strSaveFile = saveFileDialog1.FileName;
+                }
+            }
+            else
+            {
+                File.Copy(strSaveFile, strSaveFile + ".bak");
+            }
+            StreamWriter wr = new StreamWriter(strSaveFile);
+            wr.Write(LZString.CompressToBase64(textBoxSaveFileContent.Text));
+            wr.Close();
         }
     }
 }

@@ -50,11 +50,11 @@
             // toolStripContainer1.ContentPanel
             // 
             this.toolStripContainer1.ContentPanel.Controls.Add(this.textBoxSaveFileContent);
-            this.toolStripContainer1.ContentPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.toolStripContainer1.ContentPanel.Margin = new System.Windows.Forms.Padding(4);
             this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(778, 513);
             this.toolStripContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.toolStripContainer1.Location = new System.Drawing.Point(0, 0);
-            this.toolStripContainer1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.toolStripContainer1.Margin = new System.Windows.Forms.Padding(4);
             this.toolStripContainer1.Name = "toolStripContainer1";
             this.toolStripContainer1.Size = new System.Drawing.Size(778, 544);
             this.toolStripContainer1.TabIndex = 1;
@@ -70,7 +70,8 @@
             this.textBoxSaveFileContent.AllowDrop = true;
             this.textBoxSaveFileContent.Dock = System.Windows.Forms.DockStyle.Fill;
             this.textBoxSaveFileContent.Location = new System.Drawing.Point(0, 0);
-            this.textBoxSaveFileContent.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxSaveFileContent.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxSaveFileContent.MaxLength = 0;
             this.textBoxSaveFileContent.Multiline = true;
             this.textBoxSaveFileContent.Name = "textBoxSaveFileContent";
             this.textBoxSaveFileContent.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
@@ -112,6 +113,7 @@
             this.保存SToolStripButton.Name = "保存SToolStripButton";
             this.保存SToolStripButton.Size = new System.Drawing.Size(28, 28);
             this.保存SToolStripButton.Text = "保存(&S)";
+            this.保存SToolStripButton.Click += new System.EventHandler(this.保存SToolStripButton_Click);
             // 
             // toolStripSeparator
             // 
@@ -139,7 +141,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(778, 544);
             this.Controls.Add(this.toolStripContainer1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MinimumSize = new System.Drawing.Size(640, 480);
             this.Name = "Main";
             this.ShowIcon = false;
