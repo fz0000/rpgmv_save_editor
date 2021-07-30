@@ -21,6 +21,7 @@ namespace rpgmv_save_editor
             LoadSaveFile(strSaveFile);
         }
 
+        // case 1
         private void textBoxSaveFileContent_DragDrop(object sender, DragEventArgs e)
         {
             if (e.Data.GetDataPresent(DataFormats.FileDrop))
